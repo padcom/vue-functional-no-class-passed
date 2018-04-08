@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "poi"
+  },
+  "devDependencies": {
+    "poi": "9.6.13",
+    "vue": "2.5.16",
+    "vue-template-compiler": "2.5.16"
+  }
+}
