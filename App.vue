@@ -9,9 +9,12 @@
     <MyUlFuncJS class="items" style="color: blue">
       <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
     </MyUlFuncJS>
-    <MyUlFuncSFC class="items" style="color: blue">
+    <MyUlFuncSFC1 class="items" style="color: blue">
       <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
-    </MyUlFuncSFC>
+    </MyUlFuncSFC1>
+    <MyUlFuncSFC2 class="items" style="color: blue">
+      <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
+    </MyUlFuncSFC2>
   </div>
 </template>
 
@@ -20,14 +23,16 @@ import { shuffle } from 'lodash'
 import MyDiv from './MyDiv'
 import MyDivFunc from './MyDivFunc'
 import MyUlFuncJS from './MyUlFunc.js'
-import MyUlFuncSFC from './MyUlFunc.vue'
+import MyUlFuncSFC1 from './MyUlFunc1.vue'
+import MyUlFuncSFC2 from './MyUlFunc2.vue'
 
 export default {
   components: {
     MyDiv,
     MyDivFunc,
     MyUlFuncJS,
-    MyUlFuncSFC,
+    MyUlFuncSFC1,
+    MyUlFuncSFC2,
   },
   data () {
     return {
