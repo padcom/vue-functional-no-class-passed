@@ -4,21 +4,34 @@
     <MyDiv class="items" style="color: red"></MyDiv>
     <MyDivFunc class="items" style="color: red" />
     <MyDivFunc class="items" style="color: red"></MyDivFunc>
-    <MyDivFuncWithProps class="items" style="color: red" />
-    <MyDivFuncWithProps class="items" style="color: red"></MyDivFuncWithProps>
+
+    <MyUlFunc class="items" style="color: blue">
+      <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
+    </MyUlFunc>
   </div>
 </template>
 
 <script>
+import { shuffle } from 'lodash'
 import MyDiv from './MyDiv'
 import MyDivFunc from './MyDivFunc'
-import MyDivFuncWithProps from './MyDivFuncWithProps'
+import MyUlFunc from './MyUlFunc'
 
 export default {
   components: {
     MyDiv,
     MyDivFunc,
-    MyDivFuncWithProps,
+    MyUlFunc,
+  },
+  data () {
+    return {
+      items: [ 1, 2, 3, 4, 5 ]
+    }
+  },
+  methods: {
+    shuffle () {
+      this.items = shuffle(this.items)
+    }
   }
 }
 </script>

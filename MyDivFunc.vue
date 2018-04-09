@@ -1,5 +1,5 @@
 <template functional>
-  <div>
-    Functional component {{ props.class }}
+  <div v-bind="data.attrs">
+    Functional component
   </div>
 </template>
