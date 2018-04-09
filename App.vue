@@ -5,9 +5,13 @@
     <MyDivFunc class="items" style="color: red" />
     <MyDivFunc class="items" style="color: red"></MyDivFunc>
 
-    <MyUlFunc class="items" style="color: blue">
+    <!-- Example component with workaround -->
+    <MyUlFuncJS class="items" style="color: blue">
       <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
-    </MyUlFunc>
+    </MyUlFuncJS>
+    <MyUlFuncSFC class="items" style="color: blue">
+      <li v-for="item in items" :key="item" @click="shuffle">{{ item }}</li>
+    </MyUlFuncSFC>
   </div>
 </template>
 
@@ -15,13 +19,15 @@
 import { shuffle } from 'lodash'
 import MyDiv from './MyDiv'
 import MyDivFunc from './MyDivFunc'
-import MyUlFunc from './MyUlFunc'
+import MyUlFuncJS from './MyUlFunc.js'
+import MyUlFuncSFC from './MyUlFunc.vue'
 
 export default {
   components: {
     MyDiv,
     MyDivFunc,
-    MyUlFunc,
+    MyUlFuncJS,
+    MyUlFuncSFC,
   },
   data () {
     return {
